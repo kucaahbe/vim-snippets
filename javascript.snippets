@@ -1,0 +1,47 @@
+snippet {
+	{
+		${1://code}
+	}
+snippet if
+	if (${1:var}) {
+		${2://code}
+	}
+snippet ife
+	if (${1:var}) {
+		${2://code}
+	}
+	else
+	{
+	}
+snippet switch switch without default block
+	switch(${1:variable})
+	{
+		case ${2:value}
+		${3://code}
+		break;
+	}
+snippet switch switch with default block
+	switch(${1:variable})
+	{
+		case ${2:value}:
+			${3://code}
+			break;
+		default:
+			// code
+	}
+snippet case
+	case ${1:value}:
+		${2://code}
+		break;
+snippet $
+	$('${1:id-or-class}')${2:.};
+snippet fun
+	function ${1:name}(${2:var}) {
+		${3://code}
+	}
+snippet func
+	function () {
+		${1://code}
+	}
+snippet log
+	log(${1});
