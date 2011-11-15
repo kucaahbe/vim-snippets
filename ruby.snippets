@@ -6,6 +6,14 @@ snippet ins
 snippet def
 	def ${1}
 	end
+snippet defi
+	def initialize ${1:*args}
+		${2:# code}
+	end
+snippet defs
+	def self.${1:method} ${2:*args}
+		${3:# code}
+	end
 snippet if
 	if ${1}
 	end
@@ -65,3 +73,5 @@ snippet bl
 	{ ${1} }
 snippet blv
 	{ |${1:var}| ${2} }
+snippet rpath
+	File.expand_path( File.join(${1}), __FILE__ )
