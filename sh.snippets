@@ -2,3 +2,15 @@ snippet if
 	if [[ ${1:cond} ]]
 	then
 	fi
+snippet ife
+	if [[ ${1:cond} ]]
+	then
+		${2:# code}
+	else
+		# code 2
+	fi
+snippet for
+	for ${1:var} in ${2:list}
+	do
+		${3:#code}
+	done
