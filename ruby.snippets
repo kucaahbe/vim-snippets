@@ -31,7 +31,7 @@ snippet #
 	#{${1}}
 snippet :
 	:${1:key} => ${2:val}
-snippet eachl
+snippet ea
 	each { ${1:||} ${2} }
 snippet each
 	each do |${1:key}|
@@ -45,30 +45,6 @@ snippet dov
 	do |${1:var}|
 		${2}
 	end
-# RSpec snippets
-snippet context
-	context "${1}" do
-	end
-snippet desc
-	describe "${1}" do
-	end
-snippet spec
-	require 'spec/spec_helper'
-
-	describe ${1:ClassName} do
-
-		${2:pending('write some tests or delete '+__FILE__)}
-
-	end
-snippet it
-	it "${1:description}"${2} do
-	end
-snippet itl
-	it { ${1} }
-snippet subj
-	subject { ${1} }
-snippet let
-	let(${1:variable}) { ${2:value} }
 snippet bl
 	{ ${1} }
 snippet blv
