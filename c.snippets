@@ -37,3 +37,23 @@ snippet else
 	else {
 		${1://code}
 	}${2}
+# types
+snippet struct
+	struct ${1:Typename} {
+		${2:// included types}
+	};
+# functions
+snippet f
+	${1:fname}(${2:args})
+snippet fdef
+	$3 $1($2);
+	${3:ftype} ${1:fname}(${2:args})
+	{
+		${4://code}
+	}
+snippet prf
+	printf("${1:str}"${2:,});${3}
+snippet puts
+	puts("${1:str}");${2}
+snippet size
+	sizeof(${1:smth})
