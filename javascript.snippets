@@ -48,8 +48,10 @@ snippet func
 snippet funl
 	function () { ${1} }
 snippet log
-	log(${1});
+	${1:console.}log(${2});
 snippet .
 	.${1:method}(${2})
 snippet r
 	return ${1};
+snippet alert
+	alert(${1});${2}
