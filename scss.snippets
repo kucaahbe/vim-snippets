@@ -1,4 +1,12 @@
-snippet ou
-	outline: ${1:1}px solid ${2:red};${3}
+snippet v
+	$${1:variable}: ${2:value};${3}
+snippet mi
+	@mixin ${1:mixin-name(var)} {
+		${2://code}
+	}
 snippet inc
 	@include ${1:mixin};${2}
+snippet ex
+	@extend ${1:.class};${2}
+snippet im
+	@import "${1:filename}";${2}
