@@ -1,0 +1,50 @@
+snippet class
+	public class ${1:`Filename()`} {
+		${2://code}
+	}
+snippet main
+	public static void main(String[] args) {
+		${1://code}
+	}
+snippet im
+	import ${1:path};${2}
+
+snippet {
+	{
+		${1://code}
+	}
+snippet ife
+	if (${1:cond}) {
+		${2://code}
+	} else {
+	}
+snippet if
+	if (${1:cond}) {
+		${2://code}
+	}
+snippet elif
+	else if (${1:COND}) {
+		${2://code}
+	}${3}
+snippet else
+	else {
+		${1://code}
+	}${2}
+snippet try
+	try
+	{
+		${1://code}
+	} catch(${2:ExceptionName} ${3:e})
+	{
+		${4://code}
+	}
+snippet catch
+	 catch(${1:ExceptionName} ${2:e})
+	{
+		${3://code}
+	}
+snippet finally
+	 finnally
+	 {
+		${1://code}
+	 }
