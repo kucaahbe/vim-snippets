@@ -1,3 +1,6 @@
+snippet im
+	import ${1:path};${2}
+
 snippet class
 	public class ${1:`Filename()`} {
 		${2://code}
@@ -6,9 +9,11 @@ snippet main
 	public static void main(String[] args) {
 		${1://code}
 	}
-snippet im
-	import ${1:path};${2}
-
+snippet def
+	${1:public} ${2:void} ${3:method_name}(${4:args})
+	{
+		${5://code}
+	}
 snippet {
 	{
 		${1://code}
