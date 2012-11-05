@@ -36,6 +36,15 @@ snippet else
 	else {
 		${1://code}
 	}${2}
+# loops
+snippet for
+	for (int ${1:i} = ${2:0}; $1 ${3:<} ${4:100500}; ${5:++$1}) {
+		${6://code}
+	}
+snippet each
+	for (${1:int} ${2:el}: ${3:array}) {
+		${4://code}
+	}
 snippet try
 	try
 	{
@@ -55,5 +64,15 @@ snippet finally
 		${1://code}
 	 }
 # variables
-snippet nvar
-	${2:Type} ${1:varname} = new $2(${3:params});
+# variable array
+snippet va
+	${1:int}[] ${2:arrayname} = new $1[${3:SIZE}];
+# variable declaration
+snippet v
+	${1:String} ${2:varName};
+# variable with initialization
+snippet vi
+	${1:String} ${2:varName} = ${3:initializer};
+# variable object
+snippet vo
+	${1:Type} ${2:varname} = new $1(${3:params});
