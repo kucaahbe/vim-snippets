@@ -1,3 +1,31 @@
+# html5 template
+snippet html5
+	<!DOCTYPE html>
+	<html lang="en-us">
+		<head>
+			<meta charset="utf-8">
+			<title>Title</title>
+			<meta name="viewport" content="width=device-width">
+			<link rel="stylesheet" href="application.css">
+		</head>
+		<body>
+			<!-- content -->
+
+			<!-- javascripts -->
+			<script src="//ajax.googleapis.com/ajax/libs/jquery/${1:1.8.2}/jquery.min.js"></script>
+			<script src="application.js"></script>
+		</body>
+	</html>
+# javascript and css tags
+snippet st
+	<link rel="stylesheet" href="${1:application}.css">
+snippet js
+	<script src="${1:application}.js"></script>
+snippet scr
+	<script>
+		${1}
+	</script>
+# regular tags and attributes
 snippet <
 	<${1:div}${2: attrs}>
 		${3}
@@ -14,7 +42,3 @@ snippet cl
 	class="${1:class-value}"
 snippet d
 	data-${1:bind}="${2:value}"
-snippet scr
-	<script>
-		${1}
-	</script>
