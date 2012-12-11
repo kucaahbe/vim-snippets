@@ -1,9 +1,24 @@
+# CPP
+# includes:
 snippet inc
 	#include <${1:stdio}.h>${2}
 snippet incl
 	#include "${1:header}.h"${2}
+# defines:
 snippet def
-	#define ${1:NAME} ${2:value}
+	#define ${1:MACRO} ${2:value}
+snippet undef
+	#undef ${1:MACRO}
+# conditional:
+snippet ifdef
+	#ifdef ${1:MACRO}
+	${2}
+	#endif /* $1 */
+snippet ifndef
+	#ifndef ${1:MACRO}
+	${2}
+	#endif /* $1 */
+# C
 snippet main
 	${1:int} main(int argc, char *argv[])
 	{
