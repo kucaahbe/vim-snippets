@@ -72,8 +72,10 @@ snippet struct
 		${2:// included types}
 	};
 # functions
+snippet p
+	${1:fname}(${2:args});${3}
 snippet f
-	${1:fname}(${2:args})
+	${1:fname}(${2:args})${3}
 snippet fdef
 	$3 $1($2);
 	${3:ftype} ${1:fname}(${2:args})
@@ -86,3 +88,5 @@ snippet puts
 	puts("${1:str}");${2}
 snippet size
 	sizeof(${1:smth})
+snippet a
+	assert(${1:cond});${2}
