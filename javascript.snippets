@@ -4,6 +4,7 @@ snippet {
 	{
 		${1://code}
 	}
+
 snippet if
 	if (${1:var}) {
 		${2://code}
@@ -37,21 +38,22 @@ snippet case
 		break;
 snippet $
 	$(${1})${2}
-snippet fun
-	function () {
-		${1://code}
-	};
-snippet func
+snippet f
+	function (${1:params}) {
+		${2://code}
+	}
+snippet nf
 	function ${1:name}(${2:var}) {
 		${3://code}
 	};
-snippet funl
+snippet ff
 	function () { ${1} };
+
 snippet log
 	console.log(${1});
 snippet .
 	.${1:method}(${2})
-snippet r
+snippet ret
 	return ${1};
-snippet ale
+snippet a
 	alert(${1});${2}
