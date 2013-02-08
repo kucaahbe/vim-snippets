@@ -1,9 +1,3 @@
-snippet context
-	context "${1}" do
-	end
-snippet desc
-	describe "${1}" do
-	end
 snippet spec
 	require 'spec_helper'
 
@@ -12,12 +6,49 @@ snippet spec
 		${2:pending('write some tests or delete '+__FILE__)}
 
 	end
+
+snippet co
+	context "${1}" do
+	end
+snippet de
+	describe "${1}" do
+	end
+
 snippet it
 	it "${1:description}"${2} do
 	end
 snippet itl
 	it { ${1} }
-snippet subj
-	subject { ${1} }
-snippet let
+snippet itp
+	it "${1:description}"${2}
+
+snippet su
+	subject(${1:named}) { ${2} }
+snippet le
 	let(${1:variable}) { ${2:value} }
+
+# shoulds
+snippet s
+	should ${1}
+snippet sr
+	should_receive(${1})${2}
+snippet snr
+	should_not_receive(${1})${2}
+
+snippet se
+	should eq(${1})
+
+snippet exp
+	expect { ${1} }.to ${2}
+
+snippet re
+	raise_error(${1})
+snippet cf
+	change{${1:what?}}.from(${2}).to(${3})
+snippet cb
+	change{${1:what?}}.by(${2})
+snippet any
+	any_instance.${1}
+
+snippet stub
+	stub(${1})${2}
