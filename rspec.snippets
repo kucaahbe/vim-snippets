@@ -1,4 +1,4 @@
-snippet spec
+snippet spec spec file skeleton
 	require 'spec_helper'
 
 	describe ${1:ClassName} do
@@ -7,48 +7,53 @@ snippet spec
 
 	end
 
-snippet co
+snippet co context
 	context "${1}" do
 	end
-snippet de
+snippet de describe
 	describe "${1}" do
 	end
 
-snippet it
+snippet p pending
+	pending${1}
+
+snippet it it "" do end
 	it "${1:description}"${2} do
 	end
-snippet itl
+snippet itl it {  }
 	it { ${1} }
-snippet itp
+snippet itp it "sdfs" # pending
 	it "${1:description}"${2}
 
-snippet su
+snippet dc described_class
+	described_class${1}
+snippet su subject
 	subject(${1:named}) { ${2} }
-snippet le
+snippet le let
 	let(${1:variable}) { ${2:value} }
 
 # shoulds
-snippet s
+snippet s should
 	should ${1}
-snippet sr
+snippet sr should_receive
 	should_receive(${1})${2}
-snippet snr
+snippet snr should_not_receive
 	should_not_receive(${1})${2}
 
-snippet se
+snippet se should eq
 	should eq(${1})
 
-snippet exp
+snippet exp expect
 	expect { ${1} }.to ${2}
 
-snippet re
+snippet re raise_error
 	raise_error(${1})
-snippet cf
+snippet cf change{}.from
 	change{${1:what?}}.from(${2}).to(${3})
-snippet cb
+snippet cb change{}.by
 	change{${1:what?}}.by(${2})
-snippet any
+snippet any any
 	any_instance.${1}
 
-snippet stub
+snippet stub stub
 	stub(${1})${2}
