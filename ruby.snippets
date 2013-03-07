@@ -1,10 +1,20 @@
 snippet #!
 	#!/usr/bin/env ruby
 	${1}
-snippet req
+
+# language constructions
+snippet re
 	require '${1:lib}'${2}
-snippet ins
-	inspect
+snippet in
+	include ${1:SomeModule}
+snippet cl
+	class ${1:`substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
+		${2}
+	end
+snippet mod
+	module ${1:`substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
+		${2}
+	end
 snippet def
 	def ${1}
 	end
@@ -16,6 +26,18 @@ snippet defs
 	def self.${1:method} ${2:*args}
 		${3:# code}
 	end
+snippet do
+	do
+		${1}
+	end
+snippet dov
+	do |${1:var}|
+		${2}
+	end
+snippet dl
+	{ ${1} }
+snippet dlv
+	{ |${1:var}| ${2} }
 snippet if
 	if ${1}
 	end
@@ -27,43 +49,58 @@ snippet case
 	case ${1:var}
 	when ${2:value}
 	end
+
+# special variables:
 snippet file
 	__FILE__${1}
+snippet line
+	__LINE__${1}
+snippet s
+	self${1}
+snippet n
+	nil${1}
+snippet t
+	true
+snippet f
+	false
+
+# often-used constructions:
+snippet logi
+	logger.info ${1}
+snippet logw
+	logger.warn ${1}
+snippet logd
+	logger.warn ${1}
+
+# misc:
+snippet i
+	inspect
 snippet #
 	#{${1}}
-snippet :
-	:${1:key} => ${2:val}
-snippet ea
-	each { ${1:||} ${2} }
-snippet each
-	each do |${1:key}|
-		${2}
-	end
-snippet do
-	do
-		${1}
-	end
-snippet dov
-	do |${1:var}|
-		${2}
-	end
-snippet bl
-	{ ${1} }
-snippet blv
-	{ |${1:var}| ${2} }
 snippet rpath
 	File.expand_path( File.join(${1}), __FILE__ )
-snippet tr
-	true
-snippet fa
-	false
-snippet class
-	class ${1:ClassName}
-		${2}
+snippet times
+	${1:10_000}.times ${2}
+# benchmarks:
+snippet report
+	x.report do
+		${1}
 	end
-snippet module
-	module ${1:ModuleName}
-		${2}
+snippet bm
+	Benchmark.bm do |x|
+		x.report("1") do
+		end
+
+		x.report("2") do
+		end
+	end
+snippet bmbm
+	Benchmark.bmbm do |x|
+		x.report("1") do
+		end
+
+		x.report("2") do
+		end
 	end
 
 # capybara-related
