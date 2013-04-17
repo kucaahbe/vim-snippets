@@ -1,45 +1,67 @@
 # html5 template
-snippet html5
-	<!DOCTYPE html>
-	<html lang="en-us">
-		<head>
-			<meta charset="utf-8">
-			<title>Title</title>
-			<meta name="viewport" content="width=device-width">
-			<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
-			<link rel="stylesheet" href="application.css">
-		</head>
-		<body>
-			<!-- content -->
+snippet html5 "html5"
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<title>Title</title>
+		<meta name="viewport" content="width=device-width">
+		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="application.css">
+	</head>
+	<body>
+		<!-- content -->
+		<!-- javascripts -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/${1:1.8.2}/jquery.min.js"></script>
+		<script src="application.js"></script>
+	</body>
+</html>
+endsnippet
 
-			<!-- javascripts -->
-			<script src="//ajax.googleapis.com/ajax/libs/jquery/${1:1.8.2}/jquery.min.js"></script>
-			<script src="application.js"></script>
-		</body>
-	</html>
 # javascript and css tags
-snippet st
-	<link rel="stylesheet" href="${1:application}.css">
-snippet js
-	<script src="${1:application}.js"></script>
-snippet scr
-	<script>
-		${1}
-	</script>
+snippet st "st"
+<link rel="stylesheet" href="${1:application}.css">
+endsnippet
+
+snippet js "js"
+<script src="${1:application}.js"></script>
+endsnippet
+
+snippet scr "scr"
+<script>
+	${1}
+</script>
+endsnippet
+
 # regular tags and attributes
-snippet <
-	<${1:div}${2: attrs}>
-		${3}
-	</$1>
-snippet <<
-	<${1:div}${2: attrs}>${3}</$1>
-snippet >
-	<${1:input}${2: attrs}>
-snippet a
-	${1:attribute}="${2:value}"
-snippet id
-	id="${1:id-value}"
-snippet cl
-	class="${1:class-value}"
-snippet d
-	data-${1:bind}="${2:value}"
+snippet < "<"
+<${1:div}${2: attrs}>
+	${3}
+</$1>
+endsnippet
+
+snippet << "<<"
+<${1:div}${2: attrs}>${3}</$1>
+endsnippet
+
+snippet > ">"
+<${1:input}${2: attrs}>
+endsnippet
+
+snippet a "a"
+${1:attribute}="${2:value}"
+endsnippet
+
+snippet id "id"
+id="${1:id-value}"
+endsnippet
+
+snippet cl "cl"
+class="${1:class-value}"
+endsnippet
+
+snippet d "d"
+data-${1:bind}="${2:value}"
+endsnippet
+
+

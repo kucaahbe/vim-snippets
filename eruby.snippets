@@ -1,13 +1,22 @@
-snippet e
-	<%= ${1} %>
-snippet ee
-	<% ${1} %>
-snippet if
-	<% if ${1:condition} %>
-		${2}
-	<% end %>
-snippet ife
-	<% if ${1:condition} %>
-		${2}
-	<% else %>
-	<% end %>
+snippet e "e"
+<%= ${1} %>
+endsnippet
+
+snippet ee "ee"
+<% ${1} %>
+endsnippet
+
+snippet if "if"
+<% if ${1:condition} %>
+	${2}
+<% end %>
+endsnippet
+
+snippet ife "ife"
+<% if ${1:condition} %>
+	${2}
+<% else %>
+<% end %>
+endsnippet
+
+

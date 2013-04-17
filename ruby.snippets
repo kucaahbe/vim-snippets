@@ -1,108 +1,166 @@
-snippet #!
-	#!/usr/bin/env ruby
-	${1}
+snippet #! "#!"
+#!/usr/bin/env ruby
+$0
+endsnippet
 
 # language constructions
-snippet re
-	require '${1:lib}'${2}
-snippet in
-	include ${1:SomeModule}
-snippet cl
-	class ${1:`substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
-		${2}
-	end
-snippet mod
-	module ${1:`substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
-		${2}
-	end
-snippet def
-	def ${1}
-	end
-snippet defi
-	def initialize ${1:*args}
-		${2:# code}
-	end
-snippet defs
-	def self.${1:method} ${2:*args}
-		${3:# code}
-	end
-snippet do
-	do
-		${1}
-	end
-snippet dov
-	do |${1:var}|
-		${2}
-	end
-snippet dl
-	{ ${1} }
-snippet dlv
-	{ |${1:var}| ${2} }
-snippet if
-	if ${1}
-	end
-snippet ife
-	if ${1}
-	else
-	end
-snippet case
-	case ${1:var}
-	when ${2:value}
-	end
+snippet re "require 'library'"
+require '${1:lib}'
+$0
+endsnippet
+
+snippet in "include SomeModule"
+include ${1:SomeModule}
+$0
+endsnippet
+
+snippet cl "cl"
+class ${1:`!v substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
+	${2}
+end
+endsnippet
+
+snippet mod "mod"
+module ${1:`!v substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
+	${2}
+end
+endsnippet
+
+snippet def "def"
+def ${1}
+end
+endsnippet
+
+snippet defi "defi"
+def initialize ${1:*args}
+	${2:# code}
+end
+endsnippet
+
+snippet defs "defs"
+def self.${1:method} ${2:*args}
+	${3:# code}
+end
+endsnippet
+
+snippet do "do"
+do
+	${1}
+end
+endsnippet
+
+snippet dov "dov"
+do |${1:var}|
+	${2}
+end
+endsnippet
+
+snippet dl "dl"
+{ ${1} }
+endsnippet
+
+snippet dlv "dlv"
+{ |${1:var}| ${2} }
+endsnippet
+
+snippet if "if"
+if ${1}
+end
+endsnippet
+
+snippet ife "ife"
+if ${1}
+else
+end
+endsnippet
+
+snippet case "case"
+case ${1:var}
+when ${2:value}
+end
+endsnippet
 
 # special variables:
-snippet file
-	__FILE__${1}
-snippet line
-	__LINE__${1}
-snippet s
-	self${1}
-snippet n
-	nil${1}
-snippet t
-	true
-snippet f
-	false
+snippet file "file"
+__FILE__${1}
+endsnippet
+
+snippet line "line"
+__LINE__${1}
+endsnippet
+
+snippet s "s"
+self${1}
+endsnippet
+
+snippet n "n"
+nil${1}
+endsnippet
+
+snippet t "t"
+true
+endsnippet
+
+snippet f "f"
+false
+endsnippet
 
 # often-used constructions:
-snippet logi
-	logger.info ${1}
-snippet logw
-	logger.warn ${1}
-snippet logd
-	logger.warn ${1}
+snippet logi "logi"
+logger.info ${1}
+endsnippet
+
+snippet logw "logw"
+logger.warn ${1}
+endsnippet
+
+snippet logd "logd"
+logger.warn ${1}
+endsnippet
 
 # misc:
-snippet i
-	inspect
-snippet #
-	#{${1}}
-snippet rpath
-	File.expand_path( File.join(${1}), __FILE__ )
-snippet times
-	${1:10_000}.times ${2}
+snippet i "i"
+inspect
+endsnippet
+
+snippet # "#"
+#{${1}}
+endsnippet
+
+snippet rpath "rpath"
+File.expand_path( File.join(${1}), __FILE__ )
+endsnippet
+
+snippet times "times"
+${1:10_000}.times ${2}
+endsnippet
+
 # benchmarks:
-snippet report
-	x.report do
-		${1}
-	end
-snippet bm
-	Benchmark.bm do |x|
-		x.report("1") do
-		end
+snippet report "report"
+x.report do
+	${1}
+end
+endsnippet
 
-		x.report("2") do
-		end
+snippet bm "bm"
+Benchmark.bm do |x|
+	x.report("1") do
 	end
-snippet bmbm
-	Benchmark.bmbm do |x|
-		x.report("1") do
-		end
+	x.report("2") do
+	end
+end
+endsnippet
 
-		x.report("2") do
-		end
+snippet bmbm "bmbm"
+Benchmark.bmbm do |x|
+	x.report("1") do
 	end
+	x.report("2") do
+	end
+end
+endsnippet
 
 # capybara-related
-snippet sop
-	save_and_open_page
+snippet sop "sop"
+save_and_open_page
+endsnippet

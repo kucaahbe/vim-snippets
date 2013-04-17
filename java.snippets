@@ -1,78 +1,124 @@
-snippet im
-	import ${1:path};${2}
+snippet im "im"
+import ${1:path};${2}
+endsnippet
+
 # OOP
-snippet class
-	public class ${1:`Filename()`} {
-		${2://code}
-	}
-snippet main
-	public static void main(String[] args) {
-		${1://code}
-	}
-snippet def
-	${1:public} ${2:void} ${3:method_name}(${4:args})
-	{
-		${5://code}
-	}
+snippet class "class"
+public class ${1:`!v Filename()`} {
+	${2://code}
+}
+endsnippet
+
+snippet main "main"
+public static void main(String[] args) {
+	${1://code}
+}
+endsnippet
+
+snippet def "def"
+${1:public} ${2:void} ${3:method_name}(${4:args})
+{
+	${5://code}
+}
+endsnippet
+
 # simple constructions
-snippet {
-	{
-		${1://code}
-	}
-snippet ife
-	if (${1:cond}) {
-		${2://code}
-	} else {
-	}
-snippet if
-	if (${1:cond}) {
-		${2://code}
-	}
-snippet elif
-	else if (${1:COND}) {
-		${2://code}
-	}${3}
-snippet else
-	else {
-		${1://code}
-	}${2}
+snippet { "{"
+{
+	${1://code}
+}
+endsnippet
+
+snippet ife "ife"
+if (${1:cond}) {
+	${2://code}
+} else {
+}
+endsnippet
+
+snippet if "if"
+if (${1:cond}) {
+	${2://code}
+}
+endsnippet
+
+snippet elif "elif"
+else if (${1:COND}) {
+	${2://code}
+}${3}
+endsnippet
+
+snippet else "else"
+else {
+	${1://code}
+}${2}
+endsnippet
+
 # loops
-snippet for
-	for (int ${1:i} = ${2:0}; $1 ${3:<} ${4:100500}; ${5:++$1}) {
-		${6://code}
-	}
-snippet each
-	for (${1:int} ${2:el}: ${3:array}) {
-		${4://code}
-	}
-snippet try
-	try
-	{
-		${1://code}
-	} catch(${2:ExceptionName} ${3:e})
-	{
-		${4://code}
-	}
-snippet catch
-	 catch(${1:ExceptionName} ${2:e})
-	{
-		${3://code}
-	}
-snippet finally
-	 finnally
-	 {
-		${1://code}
-	 }
+snippet for "for"
+for (int ${1:i} = ${2:0}; $1 ${3:<} ${4:100500}; ${5:++$1}) {
+	${6://code}
+}
+endsnippet
+
+snippet each "each"
+for (${1:int} ${2:el}: ${3:array}) {
+	${4://code}
+}
+endsnippet
+
+snippet try "try"
+try
+{
+	${1://code}
+} catch(${2:ExceptionName} ${3:e})
+{
+	${4://code}
+}
+endsnippet
+
+snippet catch "catch"
+catch(${1:ExceptionName} ${2:e})
+endsnippet
+
+catch(${1:ExceptionName} ${2:e})
+endsnippet
+
+catch(${1:ExceptionName} ${2:e})
+endsnippet
+
+catch(${1:ExceptionName} ${2:e})
+endsnippet
+
+snippet finally "finally"
+finnally
+{
+endsnippet
+
+finnally
+{
+}
+endsnippet
+
 # variables
 # variable array
-snippet va
-	${1:int}[] ${2:arrayname} = new $1[${3:SIZE}];
+snippet va "va"
+${1:int}[] ${2:arrayname} = new $1[${3:SIZE}];
+endsnippet
+
 # variable declaration
-snippet v
-	${1:String} ${2:varName};
+snippet v "v"
+${1:String} ${2:varName};
+endsnippet
+
 # variable with initialization
-snippet vi
-	${1:String} ${2:varName} = ${3:initializer};
+snippet vi "vi"
+${1:String} ${2:varName} = ${3:initializer};
+endsnippet
+
 # variable object
-snippet vo
-	${1:Type} ${2:varname} = new $1(${3:params});
+snippet vo "vo"
+${1:Type} ${2:varname} = new $1(${3:params});
+endsnippet
+
+

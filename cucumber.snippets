@@ -1,22 +1,43 @@
-snippet f
-	Feature: ${1:name}
-snippet b
-	Background:
-		${1}
-snippet s
-	Scenario: ${1:name}
-snippet so
-	Scenario Outline: ${1:name}
-snippet o
-	Outline
-snippet g
-	Given ${1}
-snippet w
-	When ${1}
-snippet t
-	Then ${1}
-snippet a
-	And ${1}
-snippet e
-	Examples:
-		| ${1} |
+snippet f "f"
+Feature: ${1:name}
+endsnippet
+
+snippet b "b"
+Background:
+	${1}
+endsnippet
+
+snippet s "s"
+Scenario: ${1:name}
+endsnippet
+
+snippet so "so"
+Scenario Outline: ${1:name}
+endsnippet
+
+snippet o "o"
+Outline
+endsnippet
+
+snippet g "g"
+Given ${1}
+endsnippet
+
+snippet w "w"
+When ${1}
+endsnippet
+
+snippet t "t"
+Then ${1}
+endsnippet
+
+snippet a "a"
+And ${1}
+endsnippet
+
+snippet e "e"
+Examples:
+	| ${1} |
+endsnippet
+
+

@@ -1,63 +1,96 @@
-snippet var
-	var ${1:var} = ${2:val};
-snippet {
-	{
-		${1://code}
-	}
+snippet var "var"
+var ${1:var} = ${2:val};
+endsnippet
 
-snippet if
-	if (${1:var}) {
-		${2://code}
-	}
-snippet ife
-	if (${1:var}) {
-		${2://code}
-	}
-	else
-	{
-	}
-snippet switch switch without default block
-	switch(${1:variable})
-	{
-		case ${2:value}
+snippet { "{"
+{
+	${1://code}
+}
+endsnippet
+
+snippet if "if"
+if (${1:var}) {
+	${2://code}
+}
+endsnippet
+
+snippet ife "ife"
+if (${1:var}) {
+	${2://code}
+}
+else
+{
+}
+endsnippet
+
+snippet switch "switch without default block"
+switch(${1:variable})
+{
+	case ${2:value}
+	${3://code}
+	break;
+}
+endsnippet
+
+snippet switch "switch with default block"
+switch(${1:variable})
+{
+	case ${2:value}:
 		${3://code}
 		break;
-	}
-snippet switch switch with default block
-	switch(${1:variable})
-	{
-		case ${2:value}:
-			${3://code}
-			break;
-		default:
-			// code
-	}
-snippet case
-	case ${1:value}:
-		${2://code}
-		break;
-snippet $
-	$(${1})${2}
-snippet f
-	function (${1:params}) {
-		${2://code}
-	}
-snippet def
-	function ${1:name}(${2:var}) {
-		${3://code}
-	};
-snippet ff
-	function () { ${1} };
+	default:
+		// code
+}
+endsnippet
 
-snippet log
-	console.log(${1});
-snippet info
-	console.info(${1});
-snippet debug
-	console.debug(${1});
-snippet .
-	.${1:method}(${2})
-snippet ret
-	return ${1};
-snippet a
-	alert(${1});${2}
+snippet case "case"
+case ${1:value}:
+	${2://code}
+	break;
+endsnippet
+
+snippet $ "$"
+$(${1})${2}
+endsnippet
+
+snippet f "f"
+function (${1:params}) {
+	${2://code}
+}
+endsnippet
+
+snippet def "def"
+function ${1:name}(${2:var}) {
+	${3://code}
+};
+endsnippet
+
+snippet ff "ff"
+function () { ${1} };
+endsnippet
+
+snippet log "log"
+console.log(${1});
+endsnippet
+
+snippet info "info"
+console.info(${1});
+endsnippet
+
+snippet debug "debug"
+console.debug(${1});
+endsnippet
+
+snippet . "."
+.${1:method}(${2})
+endsnippet
+
+snippet ret "ret"
+return ${1};
+endsnippet
+
+snippet a "a"
+alert(${1});${2}
+endsnippet
+
+
