@@ -1,88 +1,87 @@
 snippet spec "spec file skeleton"
 require 'spec_helper'
+
 describe ${1:ClassName} do
 	${2:pending('write some tests or delete '+__FILE__)}
 end
 endsnippet
 
 snippet co "context"
-context "${1}" do
+context "$1" do
 end
 endsnippet
 
 snippet de "describe"
-describe "${1}" do
+describe "$1" do
 end
 endsnippet
 
 snippet p "pending"
-pending${1}
+pending$1
 endsnippet
 
-snippet it "it "" do end"
-it "${1:description}"${2} do
+snippet it "it"
+it "${1:description}"$2 do
 end
 endsnippet
 
 snippet itl "it {  }"
-it { ${1} }
+it { $1 }
 endsnippet
 
-snippet itp "it "sdfs" # pending"
-it "${1:description}"${2}
+snippet itp "it (pending)"
+it "${1:description}"$2
 endsnippet
 
 snippet dc "described_class"
-described_class${1}
+described_class$1
 endsnippet
 
-snippet su "subject"
-subject(${1:named}) { ${2} }
+snippet su "subject(:name) {}"
+subject(:${1:named}) { $2 }
 endsnippet
 
-snippet le "let"
-let(${1:variable}) { ${2:value} }
+snippet let "let(:name) {}"
+let(:${1:variable}) { ${2:value} }
 endsnippet
 
 # shoulds
-snippet s "should"
-should ${1}
+snippet sh "should"
+should $1
 endsnippet
 
-snippet sr "should_receive"
-should_receive(${1})${2}
+snippet shr "should_receive"
+should_receive($1)$2
 endsnippet
 
-snippet snr "should_not_receive"
-should_not_receive(${1})${2}
+snippet shnr "should_not_receive"
+should_not_receive($1)$2
 endsnippet
 
-snippet se "should eq"
-should eq(${1})
+snippet she "should eq"
+should eq($1)
 endsnippet
 
 snippet exp "expect"
-expect { ${1} }.to ${2}
+expect { $1 }.to $2
 endsnippet
 
-snippet re "raise_error"
-raise_error(${1})
+snippet rai "raise_error"
+raise_error($1)
 endsnippet
 
-snippet cf "change{}.from"
-change{${1:what?}}.from(${2}).to(${3})
+snippet chf "change{}.from"
+change{${1:what?}}.from($2).to($3)
 endsnippet
 
-snippet cb "change{}.by"
-change{${1:what?}}.by(${2})
+snippet chb "change{}.by"
+change{${1:what?}}.by($2)
 endsnippet
 
 snippet any "any"
-any_instance.${1}
+any_instance.$1
 endsnippet
 
 snippet stub "stub"
-stub(${1})${2}
+stub($1)$2
 endsnippet
-
-
