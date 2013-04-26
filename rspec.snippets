@@ -7,81 +7,81 @@ end
 endsnippet
 
 snippet co "context"
-context "$1" do
+context "$0" do
 end
 endsnippet
 
 snippet de "describe"
-describe "$1" do
+describe "$0" do
 end
 endsnippet
 
 snippet p "pending"
-pending$1
+pending
 endsnippet
 
-snippet it "it"
-it "${1:description}"$2 do
+snippet pe "pending('description')"
+pending($0)
+endsnippet
+
+snippet it "it ... do"
+it "$0" do
 end
 endsnippet
 
-snippet itl "it {  }"
-it { $1 }
+snippet itl "it {...}"
+it { $0 }
 endsnippet
 
 snippet itp "it (pending)"
-it "${1:description}"$2
+it "$0"
 endsnippet
 
-snippet dc "described_class"
-described_class$1
+snippet dc "described_class" i
+described_class
 endsnippet
 
 snippet su "subject(:name) {}"
-subject(:${1:named}) { $2 }
+subject(:${1:named}) { $0 }
 endsnippet
 
 snippet let "let(:name) {}"
-let(:${1:variable}) { ${2:value} }
+let(:${1:variable}) { $0 }
 endsnippet
 
 # shoulds
-snippet sh "should"
-should $1
+snippet sh "should" i
+should $0
 endsnippet
 
-snippet shr "should_receive"
-should_receive($1)$2
+snippet she "should eq" i
+should eq($0)
 endsnippet
 
-snippet shnr "should_not_receive"
-should_not_receive($1)$2
+snippet shr "should_receive" i
+should_receive($0)
 endsnippet
 
-snippet she "should eq"
-should eq($1)
+snippet shnr "should_not_receive" i
+should_not_receive($0)
 endsnippet
 
-snippet exp "expect"
-expect { $1 }.to $2
+snippet exp "expect {  }.to ..."
+expect { $1 }.to $0
 endsnippet
 
 snippet rai "raise_error"
-raise_error($1)
+raise_error($0)
 endsnippet
 
-snippet chf "change{}.from"
-change{${1:what?}}.from($2).to($3)
+snippet chf "change{}.from().to()"
+change{${1:what?}}.from($2).to($0)
 endsnippet
 
-snippet chb "change{}.by"
-change{${1:what?}}.by($2)
+snippet chb "change{}.by()"
+change{${1:what?}}.by($0)
 endsnippet
 
-snippet any "any"
-any_instance.$1
-endsnippet
-
-snippet stub "stub"
-stub($1)$2
+snippet anyi "any_instance." i
+any_instance.
 endsnippet

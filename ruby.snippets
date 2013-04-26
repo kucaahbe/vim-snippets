@@ -1,75 +1,66 @@
-snippet #! "#!"
+snippet #! "#!/usr/bin/env ruby" b
 #!/usr/bin/env ruby
-$0
 endsnippet
 
 # language constructions
 snippet re "require 'library'"
 require '${1:lib}'
-$0
 endsnippet
 
 snippet in "include SomeModule"
 include ${1:SomeModule}
-$0
 endsnippet
 
 snippet cl "cl"
 class ${1:`!v substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
-	${2}
+	$0
 end
 endsnippet
 
 snippet mod "mod"
 module ${1:`!v substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
-	${2}
+	$0
 end
 endsnippet
 
 snippet def "def"
-def ${1}
+def $0
 end
 endsnippet
 
 snippet defi "defi"
-def initialize ${1:*args}
-	${2:# code}
+def initialize$0
 end
 endsnippet
 
 snippet defs "defs"
-def self.${1:method} ${2:*args}
-	${3:# code}
+def self.$0
 end
 endsnippet
 
 snippet do "do"
 do
-	${1}
+	$0
 end
 endsnippet
 
 snippet dov "dov"
 do |${1:var}|
-	${2}
+	$0
 end
 endsnippet
 
-snippet dl "dl"
-{ ${1} }
-endsnippet
-
-snippet dlv "dlv"
-{ |${1:var}| ${2} }
+snippet {{ "{ |var| ... }" i
+{ |${1:var}| $0 }
 endsnippet
 
 snippet if "if"
-if ${1}
+if $0
 end
 endsnippet
 
 snippet ife "ife"
-if ${1}
+if $0
 else
 end
 endsnippet
@@ -77,24 +68,30 @@ endsnippet
 snippet case "case"
 case ${1:var}
 when ${2:value}
+else
+	#code
 end
 endsnippet
 
-# special variables:
-snippet file "file"
-__FILE__${1}
+snippet wh "when value"
+when $0
 endsnippet
 
-snippet line "line"
-__LINE__${1}
+# special variables:
+snippet file "__FILE__" i
+__FILE__
+endsnippet
+
+snippet line "__LINE__" i
+__LINE__
 endsnippet
 
 snippet s "s"
-self${1}
+self
 endsnippet
 
 snippet n "n"
-nil${1}
+nil
 endsnippet
 
 snippet t "t"
@@ -106,33 +103,37 @@ false
 endsnippet
 
 # often-used constructions:
-snippet logi "logi"
-logger.info ${1}
+snippet tap "tap { |var| ... }" i
+tap { |${1:obj}| $0 }
 endsnippet
 
-snippet logw "logw"
-logger.warn ${1}
+snippet logi "logger.info ..."
+logger.info $0
 endsnippet
 
-snippet logd "logd"
-logger.warn ${1}
+snippet logw "logger.warn ..."
+logger.warn $0
+endsnippet
+
+snippet logd "logger.debug ..."
+logger.debug $0
 endsnippet
 
 # misc:
-snippet i "i"
+snippet i "inspect" i
 inspect
 endsnippet
 
-snippet # "#"
-#{${1}}
+snippet # "#" i
+#{$0}
 endsnippet
 
-snippet rpath "rpath"
-File.expand_path( File.join(${1}), __FILE__ )
+snippet rpath "File.expand_path( File.join(...), __FILE__ )" i
+File.expand_path( File.join($0), __FILE__ )
 endsnippet
 
-snippet times "times"
-${1:10_000}.times ${2}
+snippet times "n.times ..."
+${1:10_000}.times $0
 endsnippet
 
 # benchmarks:
