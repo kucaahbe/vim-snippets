@@ -4,19 +4,19 @@ endsnippet
 
 snippet { "{"
 {
-	${1://code}
+	$0
 }
 endsnippet
 
 snippet if "if"
 if (${1:var}) {
-	${2://code}
+	$0
 }
 endsnippet
 
 snippet ife "ife"
 if (${1:var}) {
-	${2://code}
+	$0
 }
 else
 {
@@ -27,7 +27,7 @@ snippet switch "switch without default block"
 switch(${1:variable})
 {
 	case ${2:value}
-	${3://code}
+	${0://code}
 	break;
 }
 endsnippet
@@ -36,7 +36,7 @@ snippet switch "switch with default block"
 switch(${1:variable})
 {
 	case ${2:value}:
-		${3://code}
+		${0://code}
 		break;
 	default:
 		// code
@@ -45,28 +45,22 @@ endsnippet
 
 snippet case "case"
 case ${1:value}:
-	${2://code}
+	${0://code}
 	break;
 endsnippet
 
 snippet $ "$"
-$(${1})${2}
+$($1)$0
 endsnippet
 
-snippet f "f"
+snippet f "function () {" i
 function (${1:params}) {
-	${2://code}
+	$0
 }
 endsnippet
 
-snippet def "def"
-function ${1:name}(${2:var}) {
-	${3://code}
-};
-endsnippet
-
-snippet ff "ff"
-function () { ${1} };
+snippet fu "function() {  }" i
+function ($1) { $0 }
 endsnippet
 
 snippet log "log"
@@ -81,7 +75,7 @@ snippet debug "debug"
 console.debug(${1});
 endsnippet
 
-snippet . "."
+snippet . "." i
 .${1:method}(${2})
 endsnippet
 
@@ -92,5 +86,3 @@ endsnippet
 snippet a "a"
 alert(${1});${2}
 endsnippet
-
-
