@@ -53,13 +53,13 @@ snippet $ "$"
 $($1)$0
 endsnippet
 
-snippet f "function () {" i
-function (${1:params}) {
+snippet fu "function () {" i
+function ${1:name}(${2:params}) {
 	$0
 }
 endsnippet
 
-snippet fu "function() {  }" i
+snippet f "function() {  }" i
 function ($1) { $0 }
 endsnippet
 
