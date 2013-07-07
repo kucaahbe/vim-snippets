@@ -95,6 +95,22 @@ else
 }
 endsnippet
 
+snippet switch "switch()"
+switch(${1:c}) {
+	case ${2:val}:
+		$0
+		break;
+	default:
+		break;
+}
+endsnippet
+
+snippet case "case :"
+case ${1:val}:
+	$0
+	break;
+endsnippet
+
 # types
 snippet s "new struct definition" b
 struct ${1:StructName} {
