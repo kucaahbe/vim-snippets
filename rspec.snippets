@@ -72,7 +72,9 @@ should_not_receive($0)
 endsnippet
 
 snippet exp "expect {  }.to ..."
-expect { $1 }.to $0
+expect {
+  $1
+}.to $0
 endsnippet
 
 snippet rai "raise_error"
@@ -89,4 +91,8 @@ endsnippet
 
 snippet anyi "any_instance." i
 any_instance.
+endsnippet
+
+snippet aco "and_call_original" i
+and_call_original
 endsnippet
