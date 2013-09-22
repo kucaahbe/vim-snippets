@@ -7,6 +7,10 @@ snippet re "require 'library'"
 require '${1:lib}'
 endsnippet
 
+snippet rr "require_relative '../library'"
+require_relative '${1:lib}'
+endsnippet
+
 snippet in "include SomeModule"
 include ${1:SomeModule}
 endsnippet
@@ -104,7 +108,7 @@ endsnippet
 
 # often-used constructions:
 snippet tap "tap { |var| ... }" i
-tap { |${1:obj}| $0 }
+tap { |obj| ${1:p obj} }
 endsnippet
 
 snippet logi "logger.info ..."
@@ -122,6 +126,10 @@ endsnippet
 # misc:
 snippet in "inspect" i
 inspect
+endsnippet
+
+snippet db "debug"
+debugger
 endsnippet
 
 snippet # "#" i
