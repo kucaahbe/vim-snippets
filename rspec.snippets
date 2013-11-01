@@ -7,13 +7,31 @@ end
 endsnippet
 
 snippet co "context"
-context "$0" do
+context "$1" do
+
+	$0
+
 end
 endsnippet
 
 snippet de "describe"
-describe "$0" do
+describe "$1" do
+
+	$0
+
 end
+endsnippet
+
+snippet se "shared_examples"
+shared_examples "$1" do
+
+	$0
+
+end
+endsnippet
+
+snippet ie "include_examples"
+include_examples "$1"
 endsnippet
 
 snippet p "pending"
