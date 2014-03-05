@@ -1,0 +1,36 @@
+snippet #! "#!/usr/bin/env perl" b
+#!/usr/bin/env perl
+use strict;
+use warnings;
+endsnippet
+
+snippet if
+if (${1:cond}) {
+	$0
+}
+endsnippet
+
+snippet ife
+if (${1:cond}) {
+	$0
+} else {
+}
+endsnippet
+
+snippet unless
+unless (${1:cond}) {
+	$0
+}
+endsnippet
+
+snippet else
+else {
+	$0
+}
+endsnippet
+
+snippet sub "sub func() { ... }"
+sub ${1:func} {
+	$0
+}
+endsnippet
