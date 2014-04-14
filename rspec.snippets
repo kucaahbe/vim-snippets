@@ -52,6 +52,10 @@ xit "$0" do
 end
 endsnippet
 
+snippet xitl "xit '...'"
+xit "$0"
+endsnippet
+
 snippet itl "it {...}"
 it { $0 }
 endsnippet
@@ -89,10 +93,18 @@ snippet shnr "should_not_receive" i
 should_not_receive($0)
 endsnippet
 
-snippet exp "expect {  }.to ..."
+snippet exp "expect(...).to ..."
+expect($1).to $0
+endsnippet
+
+snippet expe "expect {  }.to ..."
 expect {
   $1
 }.to $0
+endsnippet
+
+snippet all "allow(...).to ..."
+allow($1).to receive($0)
 endsnippet
 
 snippet rai "raise_error"
