@@ -15,40 +15,46 @@ snippet in "include SomeModule"
 include ${1:SomeModule}
 endsnippet
 
-snippet cl "cl"
+snippet cl "class CurrentFileName"
 class ${1:`!v substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
 	$0
 end
 endsnippet
 
-snippet mod "mod"
+snippet cls "class <<self"
+class <<self
+	$0
+end
+endsnippet
+
+snippet mod "module CurrentFileName"
 module ${1:`!v substitute(Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
 	$0
 end
 endsnippet
 
-snippet def "def"
+snippet def "def method .. end"
 def $0
 end
 endsnippet
 
-snippet defi "defi"
+snippet defi "def initialize .. end"
 def initialize$0
 end
 endsnippet
 
-snippet defs "defs"
+snippet defs "def self.method"
 def self.$0
 end
 endsnippet
 
-snippet do "do"
+snippet do "do .. end"
 do
 	$0
 end
 endsnippet
 
-snippet dov "dov"
+snippet dov "do |var| .. end"
 do |${1:var}|
 	$0
 end
@@ -58,13 +64,24 @@ snippet {{ "{ |var| ... }" i
 { |${1:var}| $0 }
 endsnippet
 
-snippet if "if"
+snippet if "if .. end"
 if $0
 end
 endsnippet
 
-snippet ife "ife"
+snippet ife "if ... else ..."
 if $0
+else
+end
+endsnippet
+
+snippet unl "unless"
+unless $0
+end
+endsnippet
+
+snippet unle "unless .. else .."
+unless $0
 else
 end
 endsnippet
@@ -79,6 +96,16 @@ endsnippet
 
 snippet wh "when value"
 when $0
+endsnippet
+
+# get curent line
+#`!v strpart(getline("."),1,5)`
+# get word before cursor
+# if it presence insert it with s at end
+snippet each ".each |var| .. end" i
+each |${1:i}|
+	$0
+end
 endsnippet
 
 # special variables:
