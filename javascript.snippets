@@ -2,10 +2,6 @@ snippet var "var"
 var ${1:var} = ${2:val};
 endsnippet
 
-snippet dbg "debugger"
-debugger;
-endsnippet
-
 snippet { "{"
 {
 	$0
@@ -21,9 +17,7 @@ endsnippet
 snippet ife "ife"
 if (${1:var}) {
 	$0
-}
-else
-{
+} else {
 }
 endsnippet
 
@@ -53,10 +47,6 @@ case ${1:value}:
 	break;
 endsnippet
 
-snippet $ "$"
-$($1)$0
-endsnippet
-
 snippet fu "function () {" i
 function ${1:name}(${2:params}) {
 	$0
@@ -64,29 +54,51 @@ function ${1:name}(${2:params}) {
 endsnippet
 
 snippet f "function() {  }" i
-function ($1) { $0 }
+function ($1) {$0 }
+endsnippet
+
+snippet . "." i
+.${1:method}($0)
+endsnippet
+
+snippet ret "ret"
+return $0;
+endsnippet
+
+# misc
+
+snippet timeout
+setTimeout(function() {
+	$0
+}, ${1:500});
+endsnippet
+
+snippet a "a"
+alert(${1});${2}
+endsnippet
+
+# debugging
+snippet dbg "debugger"
+debugger;
 endsnippet
 
 snippet log "log"
 console.log(${1});
 endsnippet
 
-snippet info "info"
+snippet logi "info"
 console.info(${1});
 endsnippet
 
-snippet debug "debug"
+snippet logd "console.debug"
 console.debug(${1});
 endsnippet
 
-snippet . "." i
-.${1:method}(${2})
+snippet logt "console.table"
+console.table(${1});
 endsnippet
 
-snippet ret "ret"
-return ${1};
-endsnippet
-
-snippet a "a"
-alert(${1});${2}
+# jQuery
+snippet $ "$"
+$($1)$0
 endsnippet
