@@ -191,20 +191,46 @@ end
 endsnippet
 
 snippet bm "bm"
+require 'benchmark'
+
+$0
+
+COUNT=1_000
+
 Benchmark.bm do |x|
+
 	x.report("1") do
+		COUNT.times do
+		end
 	end
+
 	x.report("2") do
+		COUNT.times do
+		end
 	end
+
 end
 endsnippet
 
 snippet bmbm "bmbm"
+require 'benchmark'
+
+$0
+
+COUNT=1_000
+
 Benchmark.bmbm do |x|
+
 	x.report("1") do
+		COUNT.times do
+		end
 	end
+
 	x.report("2") do
+		COUNT.times do
+		end
 	end
+
 end
 endsnippet
 
