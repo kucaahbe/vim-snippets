@@ -1,21 +1,24 @@
 # html5 template
 snippet html5 "html5"
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
 	<head>
 		<meta charset="utf-8">
-		<title>Title</title>
-		<meta name="viewport" content="width=device-width">
-		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="application.css">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>${1:Title}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
-		<!-- content -->
-		<!-- javascripts -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/${1:1.8.2}/jquery.min.js"></script>
-		<script src="application.js"></script>
 	</body>
 </html>
+endsnippet
+
+snippet a "link tag"
+<a href="${1:#}"$2>$0</a>
+endsnippet
+
+snippet import "import link tag"
+<link rel="import" href="$0">
 endsnippet
 
 # comment
@@ -34,37 +37,47 @@ endsnippet
 
 snippet scr "scr"
 <script>
-	${1}
+	$0
 </script>
 endsnippet
 
 # regular tags and attributes
 snippet < "<"
-<${1:div}${2: attrs}>
-	${3}
+<${1:div}$2>
+	$0
 </$1>
 endsnippet
 
 snippet << "<<"
-<${1:div}${2: attrs}>${3}</$1>
+<${1:div}$2>$0</$1>
 endsnippet
 
-snippet > ">"
-<${1:input}${2: attrs}>
+snippet form "form tag"
+<form action="${1:/url}" method="${2:post}"$3>
+	$0
+</form>
 endsnippet
 
-snippet a "a"
-${1:attribute}="${2:value}"
+snippet label "label tag"
+<label for="${1:name}">$0</label>
 endsnippet
 
-snippet id "id"
-id="${1:id-value}"
+snippet input "input tag"
+<input type="${1:text}" name="${2:name}">
 endsnippet
 
-snippet cl "cl"
-class="${1:class-value}"
+snippet = "html attribute"
+${1:attribute}="${2:value}"$0
 endsnippet
 
-snippet d "d"
-data-${1:bind}="${2:value}"
+snippet id "id attribute"
+id="$1"$0
+endsnippet
+
+snippet class "class value"
+class="${1:.clearfix}"$0
+endsnippet
+
+snippet data "data attribute"
+data-${1:bind}="${2:value}"$0
 endsnippet
