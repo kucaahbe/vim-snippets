@@ -47,14 +47,20 @@ case ${1:value}:
 	break;
 endsnippet
 
-snippet fu "function () {" i
+snippet def "function () {" i
 function ${1:name}(${2:params}) {
 	$0
 }
 endsnippet
 
-snippet f "function() {  }" i
-function ($1) {$0 }
+snippet f "function() {" i
+function ($1) {
+	$0
+}
+endsnippet
+
+snippet ff "function() {  }" i
+function ($1) { $0 }
 endsnippet
 
 snippet . "." i
@@ -74,7 +80,7 @@ setTimeout(function() {
 endsnippet
 
 snippet a "a"
-alert(${1});${2}
+alert(${1});$0
 endsnippet
 
 # debugging
@@ -83,19 +89,25 @@ debugger;
 endsnippet
 
 snippet log "log"
-console.log(${1});
+console.log($0);
 endsnippet
 
 snippet logi "info"
-console.info(${1});
+console.info($0);
 endsnippet
 
 snippet logd "console.debug"
-console.debug(${1});
+console.debug($0);
 endsnippet
 
 snippet logt "console.table"
-console.table(${1});
+console.table($0);
+endsnippet
+
+snippet promise "new Promise"
+new Promise(function(resolve,reject)) {
+  $0
+};
 endsnippet
 
 # jQuery
