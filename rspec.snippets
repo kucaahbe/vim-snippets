@@ -1,32 +1,26 @@
 snippet spec "spec file skeleton"
-require 'spec_helper'
+require '${1:rails}_helper'
 
-describe ${1:ClassName} do
-	${2:pending('write some tests or delete '+__FILE__)}
+describe ${2:ClassName} do
+	${0:pending('write some tests or delete '+__FILE__)}
 end
 endsnippet
 
 snippet co "context"
 context '$1' do
-
 	$0
-
 end
 endsnippet
 
 snippet de "describe"
-describe '$1' do
-
+describe '$1'${2:, :wip} do
 	$0
-
 end
 endsnippet
 
 snippet se "shared_examples"
 shared_examples '$1' do
-
 	$0
-
 end
 endsnippet
 
@@ -119,7 +113,7 @@ expect {
 }.to $0
 endsnippet
 
-snippet all "allow(...).to ..."
+snippet allow "allow(...).to ..."
 allow($1).to receive($0)
 endsnippet
 
@@ -128,7 +122,7 @@ raise_error($0)
 endsnippet
 
 snippet chf "change{}.from().to()"
-change{${1:what?}}.from($2).to($0)
+change { ${1:what?} }.from($2).to($0)
 endsnippet
 
 snippet chb "change{}.by()"
