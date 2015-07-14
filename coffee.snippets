@@ -6,6 +6,11 @@ snippet class "class"
 class ${1:Class} extends ${2:Class}
 endsnippet
 
+snippet f "function"
+($1) =>
+	$0
+endsnippet
+
 snippet $ "$"
 $(${1})${2}
 endsnippet
@@ -18,8 +23,11 @@ snippet log "log"
 console?.log ${1}
 endsnippet
 
-snippet ale "ale"
-alert '${1:ololo}'${2}
+snippet a "alert"
+alert $1
 endsnippet
 
-
+# debugging
+snippet dbg "debugger"
+debugger
+endsnippet
