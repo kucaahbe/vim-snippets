@@ -82,25 +82,12 @@ snippet su "subject(:name) {}"
 subject(:${1:named}) { $0 }
 endsnippet
 
+snippet sum "subject(:method) { smth.method(:some_method) }"
+subject(:method) { ${1:described_class}.method(:${0:name}) }
+endsnippet
+
 snippet let "let(:name) {}"
 let(:${1:variable}) { $0 }
-endsnippet
-
-# shoulds
-snippet sh "should" i
-should $0
-endsnippet
-
-snippet she "should eq" i
-should eq($0)
-endsnippet
-
-snippet shr "should_receive" i
-should_receive($0)
-endsnippet
-
-snippet shnr "should_not_receive" i
-should_not_receive($0)
 endsnippet
 
 snippet exp "expect(...).to ..."
@@ -115,6 +102,10 @@ endsnippet
 
 snippet allow "allow(...).to ..."
 allow($1).to receive($0)
+endsnippet
+
+snippet rec "receive"
+receive($0)
 endsnippet
 
 snippet rai "raise_error"
