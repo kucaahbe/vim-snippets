@@ -11,14 +11,12 @@ snippet #! "#!/bin/zsh" b
 endsnippet
 
 snippet if "if"
-if [[ ${1:cond} ]]
-then
+if [[ ${1:cond} ]]; then
 fi
 endsnippet
 
 snippet ife "ife"
-if [[ ${1:cond} ]]
-then
+if [[ ${1:cond} ]]; then
 	${2:# code}
 else
 	# code 2
@@ -26,8 +24,7 @@ fi
 endsnippet
 
 snippet for "for"
-for ${1:var} in ${2:list}
-do
+for ${1:var} in ${2:list}; do
 	${3:#code}
 done
 endsnippet

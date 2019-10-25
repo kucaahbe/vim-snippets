@@ -1,7 +1,7 @@
 snippet spec "spec file skeleton"
 require '${1:rails}_helper'
 
-describe ${2:ClassName} do
+RSpec.describe ${2:ClassName} do
 	${0:pending('write some tests or delete '+__FILE__)}
 end
 endsnippet
@@ -18,7 +18,19 @@ describe '$1'${2:, :wip} do
 end
 endsnippet
 
-snippet se "shared_examples"
+snippet fe "feature"
+feature '$1'${2:, :wip} do
+	$0
+end
+endsnippet
+
+snippet af "aggregate_failures"
+aggregate_failures '$1' do
+	$0
+end
+endsnippet
+
+snippet she "shared_examples"
 shared_examples '$1' do
 	$0
 end
@@ -78,7 +90,11 @@ snippet dc "described_class" i
 described_class
 endsnippet
 
-snippet su "subject(:name) {}"
+snippet su "subject {}"
+subject { $0 }
+endsnippet
+
+snippet sub "subject(:name) {}"
 subject(:${1:named}) { $0 }
 endsnippet
 
@@ -88,6 +104,22 @@ endsnippet
 
 snippet let "let(:name) {}"
 let(:${1:variable}) { $0 }
+endsnippet
+
+snippet let! "let!(:name) {}"
+let!(:${1:variable}) { $0 }
+endsnippet
+
+snippet ba "background {}"
+background do
+	$0
+end
+endsnippet
+
+snippet sc "scenario {}"
+scenario '$1' do
+	$0
+end
 endsnippet
 
 snippet exp "expect(...).to ..."

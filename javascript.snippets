@@ -1,5 +1,19 @@
-snippet var "var"
-var ${1:var} = ${2:val};
+snippet ;( ";(function ())(args)"
+;(function ($2) {
+	$0
+})($1)
+endsnippet
+
+snippet var "var a"
+var ${1:name} = ${2:val}
+endsnippet
+
+snippet const "const a"
+const ${1:name} = ${2:val}
+endsnippet
+
+snippet let "let a"
+let ${1:name} = ${2:val}
 endsnippet
 
 snippet { "{"
@@ -8,34 +22,45 @@ snippet { "{"
 }
 endsnippet
 
+snippet try
+try {
+	$0
+} catch (error) {
+}
+endsnippet
+
 snippet if "if"
-if (${1:var}) {
+if ( ${1:var} ) {
 	$0
 }
 endsnippet
 
 snippet ife "ife"
-if (${1:var}) {
+if ( ${1:var} ) {
 	$0
 } else {
 }
 endsnippet
 
+snippet unl "if ( !smth )"
+if ( !${1:var} ) {
+	$0
+}
+endsnippet
+
 snippet switch "switch without default block"
-switch(${1:variable})
-{
-	case ${2:value}
+switch ( ${1:variable} ) {
+	case ${2:value}:
 	${0://code}
-	break;
+	break
 }
 endsnippet
 
 snippet switch "switch with default block"
-switch(${1:variable})
-{
+switch ( ${1:variable} ) {
 	case ${2:value}:
 		${0://code}
-		break;
+		break
 	default:
 		// code
 }
@@ -44,16 +69,16 @@ endsnippet
 snippet case "case"
 case ${1:value}:
 	${0://code}
-	break;
+	break
 endsnippet
 
 snippet def "function () {" i
-function ${1:name}(${2:params}) {
+function ${1:name} (${2:params}) {
 	$0
 }
 endsnippet
 
-snippet f "function() {" i
+snippet fu "function() {" i
 function ($1) {
 	$0
 }
@@ -63,12 +88,30 @@ snippet ff "function() {  }" i
 function ($1) { $0 }
 endsnippet
 
+snippet fn "functionName () {\n  }"
+$1 ($2) {
+  $0
+},
+endsnippet
+
+snippet ft "() => {  }" i
+($1) => { $0 }
+endsnippet
+
+snippet ins ".constructor" i
+constructor
+endsnippet
+
+snippet super "this._super(...arguments)"
+this._super(...arguments)$0
+endsnippet
+
 snippet . "." i
 .${1:method}($0)
 endsnippet
 
 snippet ret "ret"
-return $0;
+return $0
 endsnippet
 
 # misc
@@ -76,41 +119,160 @@ endsnippet
 snippet timeout
 setTimeout(function() {
 	$0
-}, ${1:500});
+}, ${1:500})
 endsnippet
 
 snippet a "a"
-alert($1);$0
+alert($1)$0
 endsnippet
 
 # debugging
 snippet dbg "debugger"
-debugger;
+debugger
 endsnippet
 
 snippet log "log"
-console.log($0);
+console.log($0)
 endsnippet
 
 snippet logi "info"
-console.info($0);
+console.info($0)
 endsnippet
 
 snippet logd "console.debug"
-console.debug($0);
+console.debug($0)
 endsnippet
 
 snippet logt "console.table"
-console.table($0);
+console.table($0)
 endsnippet
 
+snippet trace "console.trace"
+console.trace($0)
+endsnippet
+
+snippet prvnt "preventDefault()" i
+preventDefault()$0
+endsnippet
+
+# Promises
 snippet promise "new Promise"
-new Promise(function(resolve,reject)) {
+new Promise (function (resolve, reject) {
+	$0
+})
+endsnippet
+
+snippet then ".then(function() { })" i
+.then(function (/*${1:result}*/) {
   $0
-};
+})
+endsnippet
+
+snippet .thent ".then( () => { })" i
+.then( (/*${1:result}*/) => {
+  $0
+})
 endsnippet
 
 # jQuery
-snippet $ "$"
-$($1)$0
+snippet $ "$('selector')"
+$('${1:body}').$0
+endsnippet
+
+snippet $t "$(this)"
+$(this)
+endsnippet
+
+# Ember
+
+snippet .get ".get('attr')" i
+.get('$0')
+endsnippet
+
+snippet .set ".set('attr', value)" i
+.set('$1', $0)
+endsnippet
+
+snippet .getp ".getProperties('attr')" i
+.getProperties('$1',$0)
+endsnippet
+
+snippet attr "attr('type')" i
+attr('${0:string}'),
+endsnippet
+
+snippet emc "Ember.computed('attr', function)"
+Ember.computed($1, function () {
+  $0
+}),
+endsnippet
+
+snippet emalias "Ember.computed.alias"
+Ember.computed.alias('$0'),
+endsnippet
+
+snippet ems "Ember service template"
+import Ember from 'ember';
+
+export default Ember.Service.extend({
+  $0
+});
+endsnippet
+
+snippet emr "Ember route template"
+import Ember from 'ember';
+
+export default Ember.Route.extend({
+  $0
+});
+endsnippet
+
+snippet emc "Ember controller template"
+import Ember from 'ember';
+
+export default Ember.Controller.extend({
+  $0
+});
+endsnippet
+
+# QUnit tests
+
+snippet	test
+test($1, function (assert) {
+	assert.expect(${2:1});
+
+	$0
+});
+endsnippet
+
+snippet	only
+only($1, function (assert) {
+	assert.expect(${2:1});
+
+	$0
+});
+endsnippet
+
+snippet	skip
+skip($1, function (assert) {
+	assert.expect(${2:1});
+
+	$0
+});
+endsnippet
+
+snippet subj "subject"
+this.subject()$0
+endsnippet
+
+snippet aseq "assert.equal()"
+assert.equal( ${1:actual}, ${2:expected});
+endsnippet
+
+snippet asok "assert.ok()"
+assert.ok( ${1:expected} );
+endsnippet
+
+snippet asnok "assert.notOk()"
+assert.notOk( ${1:expected} );
 endsnippet

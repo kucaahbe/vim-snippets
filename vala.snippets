@@ -1,0 +1,36 @@
+snippet la "lambda function" i
+($1) => {
+  $0
+}
+endsnippet
+
+snippet prf "stderr.printf"
+stderr.printf("$1\n"$0);
+endsnippet
+
+snippet ret
+return $0;
+endsnippet
+
+snippet if
+if ($1) {
+  $0
+}
+endsnippet
+
+snippet ife
+if ($1) {
+  $0
+} else {
+}
+endsnippet
+
+snippet fore "foreach"
+foreach (${1:int a} in ${2:array}) {
+  $0
+}
+endsnippet
+
+snippet to_s "to_string()" i
+to_string()
+endsnippet

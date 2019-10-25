@@ -1,23 +1,25 @@
-snippet v "v"
-$${1:variable}: ${2:value};${3}
+snippet ou "ou"
+outline: ${1:1}px solid ${2:red};$0
 endsnippet
 
-snippet mi "mi"
-@mixin ${1:mixin-name(var)} {
-	${2://code}
+snippet $ "$variable:" i
+$${1:variable}: ${2:value}${0:;}
+endsnippet
+
+snippet mi "@mixin"
+@mixin ${1:mixin-name}${2:($0)} {
+	$0
 }
 endsnippet
 
 snippet inc "inc"
-@include ${1:mixin};${2}
+@include ${1:mixin};$0
 endsnippet
 
-snippet ex "ex"
-@extend ${1:.class};${2}
+snippet ext "@extend"
+@extend ${1:.class};$0
 endsnippet
 
-snippet im "im"
-@import "${1:filename}";${2}
+snippet im "@import"
+@import "${1:filename}";$0
 endsnippet
-
-

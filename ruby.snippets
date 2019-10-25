@@ -60,6 +60,14 @@ do |${1:var}|
 end
 endsnippet
 
+snippet ret "return ..."
+return $0
+endsnippet
+
+snippet -> "lambda block"
+->(${1:params}) { $0 }
+endsnippet
+
 snippet {{ "{ |var| ... }" i
 { |${1:var}| $0 }
 endsnippet
@@ -147,12 +155,12 @@ logger.warn $0
 endsnippet
 
 snippet logd "logger.debug ..."
-logger.debug $0
+logger.debug { $0 }
 endsnippet
 
 # misc:
-snippet in "inspect" i
-inspect
+snippet ins "inspect" iw
+inspect$0
 endsnippet
 
 snippet pin "pretty_inspect" i
@@ -160,11 +168,23 @@ pretty_inspect
 endsnippet
 
 snippet dbg "debug"
-require 'debugger'; debugger
+begin require 'debugger'; debugger; rescue LoadError; require 'debug'; end
+endsnippet
+
+snippet bb "byebug"
+require 'byebug';byebug
 endsnippet
 
 snippet pry "binding.pry"
 binding.pry
+endsnippet
+
+snippet rube "# rubocop:enable"
+# rubocop:enable $0
+endsnippet
+
+snippet rubd "# rubocop:disable"
+# rubocop:disable $0
 endsnippet
 
 snippet # "#" i
@@ -198,17 +218,15 @@ $0
 COUNT=1_000
 
 Benchmark.bm do |x|
-
-	x.report("1") do
+	x.report '1' do
 		COUNT.times do
 		end
 	end
 
-	x.report("2") do
+	x.report '2' do
 		COUNT.times do
 		end
 	end
-
 end
 endsnippet
 
@@ -220,21 +238,23 @@ $0
 COUNT=1_000
 
 Benchmark.bmbm do |x|
-
-	x.report("1") do
+	x.report '1' do
 		COUNT.times do
 		end
 	end
 
-	x.report("2") do
+	x.report '2' do
 		COUNT.times do
 		end
 	end
-
 end
 endsnippet
 
 # capybara-related
 snippet sop "sop"
 save_and_open_page
+endsnippet
+
+snippet sos "save_ad"
+save_and_open_screenshot
 endsnippet
