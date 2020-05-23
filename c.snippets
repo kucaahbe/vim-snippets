@@ -122,6 +122,15 @@ snippet prf "printf()"
 printf("${1:str}\n");
 endsnippet
 
+snippet dprf "printf() some debug stuff"
+#ifndef NDEBUG
+#include <stdio.h>
+fprintf(stderr, "%s:%u:%s() $1\n", __FILE__, __LINE__, __func__,
+  $2
+);
+#endif /* NDEBUG */
+endsnippet
+
 snippet puts "puts()"
 puts("$0");
 endsnippet
@@ -136,4 +145,12 @@ endsnippet
 
 snippet func "__func__"
 __func__
+endsnippet
+
+snippet line "__LINE__"
+__LINE__
+endsnippet
+
+snippet file "__FILE__"
+__FILE__
 endsnippet
