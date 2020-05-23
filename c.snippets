@@ -10,13 +10,13 @@ snippet def "#define MACRO" b
 #define ${1:MACRO}
 endsnippet
 
-snippet ifd "#ifdef MACRO" b
+snippet ifdef "#ifdef MACRO" b
 #ifdef ${1:MACRO}
 $0
 #endif /* $1 */
 endsnippet
 
-snippet ifnd "#ifndef MACRO" b
+snippet ifndef "#ifndef MACRO" b
 #ifndef ${1:MACRO}
 #define $1
 $0
@@ -24,8 +24,7 @@ $0
 endsnippet
 
 snippet main "main() function" b
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
 	$0
 	return 0;
 }
@@ -113,10 +112,6 @@ snippet f "function call"
 ${1:function}($0);
 endsnippet
 
-snippet fi "inline function call" i
-${1:function}(${2:args})$0
-endsnippet
-
 snippet fu "function definition" b
 ${3:void} ${1:function}(${2:void}) {
 	$0
@@ -137,4 +132,8 @@ endsnippet
 
 snippet a "assert();"
 assert($0);
+endsnippet
+
+snippet func "__func__"
+__func__
 endsnippet
