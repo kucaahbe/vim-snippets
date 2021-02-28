@@ -1,7 +1,30 @@
-snippet el "error_log('msg');"
+snippet loge "error_log('msg');"
 error_log($0);
 endsnippet
 
 snippet br "echo '<br>';"
 echo '<br>';
+endsnippet
+
+snippet def "fucntion name()"
+function $1() {
+  $0
+}
+endsnippet
+
+snippet ret "return"
+return $0;
+endsnippet
+
+snippet if "if"
+if ( $1 ) {
+  $0
+}
+endsnippet
+
+snippet ife "if else"
+if ( $1 ) {
+  $0
+} else {
+}
 endsnippet
