@@ -1,7 +1,17 @@
+snippet strict "'use strict';" i
+'use strict';
+endsnippet
+
 snippet ;( ";(function ())(args)"
-;(function ($2) {
+;(function ($2) {'use strict';
 	$0
 })($1)
+endsnippet
+
+snippet $( ";(function ())(args)"
+$(function () {
+	$0
+})
 endsnippet
 
 snippet var "var a"
@@ -94,8 +104,14 @@ $1 ($2) {
 },
 endsnippet
 
-snippet ft "() => {  }" i
+snippet l "() => {  }" i
 ($1) => { $0 }
+endsnippet
+
+snippet defi "constructor() {}"
+constructor ($1) {
+  $0
+}
 endsnippet
 
 snippet ins ".constructor" i
@@ -122,7 +138,7 @@ setTimeout(function() {
 }, ${1:500})
 endsnippet
 
-snippet a "a"
+snippet al "a"
 alert($1)$0
 endsnippet
 
@@ -147,12 +163,12 @@ snippet logt "console.table"
 console.table($0)
 endsnippet
 
-snippet trace "console.trace"
+snippet tr "console.trace"
 console.trace($0)
 endsnippet
 
-snippet prvnt "preventDefault()" i
-preventDefault()$0
+snippet epd "event.preventDefault()" i
+event.preventDefault()
 endsnippet
 
 # Promises
@@ -163,13 +179,13 @@ new Promise (function (resolve, reject) {
 endsnippet
 
 snippet then ".then(function() { })" i
-.then(function (/*${1:result}*/) {
+then(function (/*${1:result}*/) {
   $0
 })
 endsnippet
 
 snippet .thent ".then( () => { })" i
-.then( (/*${1:result}*/) => {
+then( (/*${1:result}*/) => {
   $0
 })
 endsnippet
