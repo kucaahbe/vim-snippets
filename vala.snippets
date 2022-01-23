@@ -1,4 +1,4 @@
-snippet l "lambda function" i
+snippet > "lambda function" i
 ($1) => {
   $0
 }
@@ -6,6 +6,13 @@ endsnippet
 
 snippet prf "stderr.printf"
 stderr.printf("$1\n"$0);
+endsnippet
+
+snippet main "main function" b
+int main(string[] args) {
+  $0
+  return 0;
+}
 endsnippet
 
 snippet ret

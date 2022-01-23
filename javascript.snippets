@@ -8,12 +8,6 @@ snippet ;( ";(function ())(args)"
 })($1)
 endsnippet
 
-snippet $( ";(function ())(args)"
-$(function () {
-	$0
-})
-endsnippet
-
 snippet var "var a"
 var ${1:name} = ${2:val}
 endsnippet
@@ -104,7 +98,7 @@ $1 ($2) {
 },
 endsnippet
 
-snippet l "() => {  }" i
+snippet > "() => {  }" i
 ($1) => { $0 }
 endsnippet
 
@@ -191,12 +185,25 @@ then( (/*${1:result}*/) => {
 endsnippet
 
 # jQuery
+
+snippet $( "jquery onload"
+$(function () {
+	$0
+})
+endsnippet
+
 snippet $ "$('selector')"
 $('${1:body}').$0
 endsnippet
 
 snippet $t "$(this)"
 $(this)
+endsnippet
+
+snippet on "on('click', selector, function())" i
+on('${1:click}', '$2', function () {
+	$0
+})
 endsnippet
 
 # Ember

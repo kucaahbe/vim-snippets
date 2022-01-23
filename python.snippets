@@ -6,6 +6,10 @@ snippet enc "encoding" b
 # -*- coding: UTF-8 -*-
 endsnippet
 
+snippet im "import"
+import $0
+endsnippet
+
 snippet if "if :"
 if ${1}:
 	${0:pass}
@@ -16,6 +20,10 @@ if ${1}:
 	${2:pass}
 else:
 	${0:pass}
+endsnippet
+
+snippet cl "class A():" b
+class $1:
 endsnippet
 
 snippet defi "def __init__(self):"
@@ -32,6 +40,30 @@ snippet ret "return ..."
 return $0
 endsnippet
 
+snippet > "lambda:"
+lambda $1: $0
+endsnippet
+
 snippet dbg "pdb"
 import pdb; pdb.set_trace()
+endsnippet
+
+snippet logi "logger.info"
+logger.info('$0')
+endsnippet
+
+snippet logw "logger.warning"
+logger.warning('$0')
+endsnippet
+
+snippet loge "logger.error"
+logger.error('$0')
+endsnippet
+
+snippet logd "logger.debug"
+logger.debug('$0')
+endsnippet
+
+snippet prf "print"
+print($0)
 endsnippet

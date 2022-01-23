@@ -64,7 +64,7 @@ snippet ret "return ..."
 return $0
 endsnippet
 
-snippet -> "lambda block"
+snippet > "lambda block"
 ->(${1:params}) { $0 }
 endsnippet
 
@@ -147,15 +147,19 @@ tap { |obj| ${1:p obj} }
 endsnippet
 
 snippet logi "logger.info ..."
-logger.info $0
+logger.info { $0 }
 endsnippet
 
 snippet logw "logger.warn ..."
-logger.warn $0
+logger.warn { $0 }
 endsnippet
 
 snippet logd "logger.debug ..."
 logger.debug { $0 }
+endsnippet
+
+snippet loge "logger.error ..."
+logger.error { $0 }
 endsnippet
 
 # misc:
@@ -177,6 +181,10 @@ endsnippet
 
 snippet pry "binding.pry"
 binding.pry
+endsnippet
+
+snippet irb "binding.irb"
+binding.irb
 endsnippet
 
 snippet rube "# rubocop:enable"
