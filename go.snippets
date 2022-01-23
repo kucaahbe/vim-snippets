@@ -1,0 +1,41 @@
+snippet main ""
+func main() {
+	$0
+}
+endsnippet
+
+snippet def "function"
+func $1($2)$3 {
+	$0
+}
+endsnippet
+
+snippet if "if statement"
+if $1 {
+	$0
+}
+endsnippet
+
+snippet ife "if/else statement"
+if $1 {
+	$0
+} else {
+}
+endsnippet
+
+snippet switch "switch statement"
+switch $1 {
+case $2:
+	$0
+default:
+	// TODO: define default case
+}
+endsnippet
+
+snippet ret "return statement"
+return $0
+endsnippet
+
+snippet prf "fmt.Println"
+fmt.Println($0)
+endsnippet
